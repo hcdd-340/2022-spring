@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Penn State ID</string>
+    <string name="pennstate_label">PennState</string>
+    <string name="id_label">id+</string>
+    <string name="last_name">Bendapudi</string>
+    <string name="first_name">Neeli</string>
+    <string name="machine_id">123456 12345678910</string>
+    <string name="psu_id_label">PSU ID</string>
+    <string name="id_number">1 2345 6789</string>
+    <string name="position_description">FACULTY/PRESIDENT</string>
 </resources>

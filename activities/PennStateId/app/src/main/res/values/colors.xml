@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Penn State Colors: https://brand.psu.edu/design-toolkit/design-essentials#color -->
+    <color name="penn_sky">#FF009CDE</color>
+    <color name="beaver_blue">#FF1E407C</color>
+    <color name="psu_limestone">#FFA2AAAD</color>
+    <color name="psu_slate">#FF314D64</color>
+    <color name="pugh_blue">#FF96BEE6</color>
 </resources>
