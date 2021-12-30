@@ -4,4 +4,6 @@
     <string name="tree_id">#7863</string>
     <string name="tree_location">Arboretum</string>
     <string name="logo_description">App Logo</string>
+    <string name="settings_description">Settings</string>
+    <string name="search_description">Search</string>
 </resources>
