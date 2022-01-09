@@ -4,6 +4,8 @@
     <string name="id_label">id+</string>
     <string name="psu_id_label">PSU ID</string>
     <string name="next_button_label">Next</string>
+    <string name="switch_in_office_label">Currently In Office</string>
+    <string name="shared_pref_activity_5">SHARED_PREF_ACTIVITY_5</string>
 
     <!-- President Profile information -->
     <string name="president_last_name">Bendapudi</string>

@@ -134,5 +134,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_in_office"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:text="@string/switch_in_office_label"
+        app:layout_constraintStart_toStartOf="@+id/psu_id_label"
+        app:layout_constraintTop_toBottomOf="@+id/id_number" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

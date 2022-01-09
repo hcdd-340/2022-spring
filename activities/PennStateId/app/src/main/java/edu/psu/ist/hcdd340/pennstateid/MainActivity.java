@@ -12,7 +12,7 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "ACTIVITY_4";
+    private static final String TAG = "ACTIVITY_5";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
