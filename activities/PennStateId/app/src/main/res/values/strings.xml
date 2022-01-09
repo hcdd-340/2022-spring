@@ -2,10 +2,21 @@
     <string name="app_name">Penn State ID</string>
     <string name="pennstate_label">PennState</string>
     <string name="id_label">id+</string>
-    <string name="last_name">Bendapudi</string>
-    <string name="first_name">Neeli</string>
-    <string name="machine_id">123456 12345678910</string>
     <string name="psu_id_label">PSU ID</string>
-    <string name="id_number">1 2345 6789</string>
-    <string name="position_description">FACULTY/PRESIDENT</string>
+    <string name="next_button_label">Next</string>
+
+    <!-- President Profile information -->
+    <string name="president_last_name">Bendapudi</string>
+    <string name="president_first_name">Neeli</string>
+    <string name="president_machine_id">123456 12345678910</string>
+    <string name="president_id_number">1 2345 6789</string>
+    <string name="president_position_description">FACULTY/PRESIDENT</string>
+
+    <!-- IST Dean Profile information -->
+    <string name="ist_dean_last_name">Sears</string>
+    <string name="ist_dean_first_name">Andrew</string>
+    <string name="ist_dean_machine_id">987654 32101098765</string>
+    <string name="ist_dean_id_number">8 8765 4321</string>
+    <string name="ist_dean_position_description">FACULTY/DEAN</string>
+
 </resources>
