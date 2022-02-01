@@ -4,13 +4,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private static final String TAG = "ACTIVITY_5";
 
@@ -21,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button next = findViewById(R.id.button_next);
         next.setOnClickListener(this);
+
+        SwitchCompat switchInOffice = findViewById(R.id.switch_in_office);
+        switchInOffice.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -81,5 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         label = findViewById(R.id.position_description);
         label.setText(positionDescription);
 
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        Log.d(TAG, String.format("Yay! I have been toggled!! Current value: %s.", b));
     }
 }
