@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PennStateID">
         <activity
+            android:name=".ShowProfileDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
