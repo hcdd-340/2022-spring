@@ -1,5 +1,6 @@
 package edu.psu.ist.hcdd340.pennstateid;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -89,7 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * Handle the click event for the "Details" Button
      */
     private void handleDetailsButtonClick() {
-
+        Intent intent = new Intent(this, ShowProfileDetailsActivity.class);
+        startActivity(intent);
     }
 
     private void showProfile(int profileImageId, String firstName, String lastName, String machineId, String idNumber, String positionDescription) {

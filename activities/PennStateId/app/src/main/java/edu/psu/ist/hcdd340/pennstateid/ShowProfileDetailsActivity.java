@@ -28,5 +28,9 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
     public void onClick(View view) {
         int eventSourceId = view.getId();
         Log.d(TAG, String.format("Clicked on: %s", eventSourceId));
+        if ((eventSourceId == R.id.button_details_ok) || (eventSourceId == R.id.button_details_cancel))
+            finish();
+        else
+            Log.d(TAG, String.format("Unknown click event source: %s", eventSourceId));
     }
 }
