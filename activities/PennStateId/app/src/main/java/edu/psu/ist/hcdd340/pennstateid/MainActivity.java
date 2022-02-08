@@ -17,6 +17,11 @@ import com.google.android.material.imageview.ShapeableImageView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private static final String TAG = "ACTIVITY_6";
+
+    public static final String EXTRA_SHOW_MESSAGE_KEY = "SHOW_MESSAGE";
+    public static final String EXTRA_PROFILE_ID_KEY = "PROFILE_ID";
+    public static final String EXTRA_IN_OFFICE_STATE_KEY = "IN_OFFICE_STATE";
+
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -91,6 +96,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void handleDetailsButtonClick() {
         Intent intent = new Intent(this, ShowProfileDetailsActivity.class);
+
+        String currentProfileId = getCurrentProfileId();
+        String message = String.format("Profile: %s", currentProfileId);
+        intent.putExtra(EXTRA_SHOW_MESSAGE_KEY, message);
+        intent.putExtra(EXTRA_PROFILE_ID_KEY, currentProfileId);
+        intent.putExtra(EXTRA_IN_OFFICE_STATE_KEY, getInOfficeStatus(currentProfileId));
+
         startActivity(intent);
     }
 

@@ -22,6 +22,16 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
 
         findViewById(R.id.button_details_ok).setOnClickListener(this);
         findViewById(R.id.button_details_cancel).setOnClickListener(this);
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_SHOW_MESSAGE_KEY);
+        boolean inOffice = intent.getBooleanExtra(MainActivity.EXTRA_IN_OFFICE_STATE_KEY, false);
+
+        TextView textView = findViewById(R.id.details_profile_name);
+        textView.setText(message);
+
+        CheckBox checkBox = findViewById(R.id.details_in_office_checkbox);
+        checkBox.setChecked(inOffice);
     }
 
     @Override
