@@ -40,9 +40,11 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
         Log.d(TAG, String.format("Clicked on: %s", eventSourceId));
 
         if (eventSourceId == R.id.button_details_ok) {
+            setResult(RESULT_OK);
             finish();
 
         } else if (eventSourceId == R.id.button_details_cancel) {
+            setResult(RESULT_CANCELED);
             finish();
         }
         else

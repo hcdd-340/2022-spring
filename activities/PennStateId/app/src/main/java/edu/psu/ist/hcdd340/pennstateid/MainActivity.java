@@ -117,11 +117,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onActivityResult(ActivityResult result) {
                     int resultCode = result.getResultCode();
                     if (resultCode == RESULT_OK) {
-
+                        Log.d(TAG, "OK from ShowProfileDetailsActivity");
                     } else if (resultCode == RESULT_CANCELED){
-
+                        Log.d(TAG, "Canceled from ShowProfileDetailsActivity");
                     } else {
-
+                        Log.d(TAG, String.format("Unknown return code from ShowProfileDetailsActivity: %s", resultCode));
                     }
                 }
             }
