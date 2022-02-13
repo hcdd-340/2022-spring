@@ -40,9 +40,12 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
         Log.d(TAG, String.format("Clicked on: %s", eventSourceId));
 
         if (eventSourceId == R.id.button_details_ok) {
-            setResult(RESULT_OK);
+            CheckBox checkBox = findViewById(R.id.details_in_office_checkbox);
+            boolean inOfficeStatus = checkBox.isChecked();
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra(MainActivity.EXTRA_RETURN_IN_OFFICE, inOfficeStatus);
+            setResult(RESULT_OK, returnIntent);
             finish();
-
         } else if (eventSourceId == R.id.button_details_cancel) {
             setResult(RESULT_CANCELED);
             finish();
