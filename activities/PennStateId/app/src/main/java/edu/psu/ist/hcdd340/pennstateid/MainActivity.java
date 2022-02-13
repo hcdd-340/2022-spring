@@ -120,7 +120,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         assert result.getData() != null;
                         boolean inOfficeStatusFromDetails = result.getData().getBooleanExtra(EXTRA_RETURN_IN_OFFICE, false);
                         Log.d(TAG, String.format("Ok from ShowProfileDetailsActivity. Is in-office?: %s", inOfficeStatusFromDetails));
-                    } else if (resultCode == RESULT_CANCELED){
+
+                        // has the state changed?
+                        SwitchCompat inOfficeSwitch = findViewById(R.id.switch_in_office);
+                        if (inOfficeSwitch.isChecked() != inOfficeStatusFromDetails) {
+                            Log.d(TAG, String.format("In-office state has changed from %s to %s", inOfficeSwitch.isChecked(), inOfficeStatusFromDetails));
+                            storeInOfficeStatus(getCurrentProfileId(), inOfficeStatusFromDetails); // update shared preference
+                            inOfficeSwitch.setChecked(inOfficeStatusFromDetails); // update UI
+                        }
+                    } else if (resultCode == RESULT_CANCELED) {
                         Log.d(TAG, "Canceled from ShowProfileDetailsActivity");
                     } else {
                         Log.d(TAG, String.format("Unknown return code from ShowProfileDetailsActivity: %s", resultCode));
