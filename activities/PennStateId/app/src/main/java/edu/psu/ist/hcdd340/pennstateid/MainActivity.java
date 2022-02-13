@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -16,11 +20,12 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
-    private static final String TAG = "ACTIVITY_6";
+    private static final String TAG = "ACTIVITY_7";
 
     public static final String EXTRA_SHOW_MESSAGE_KEY = "SHOW_MESSAGE";
     public static final String EXTRA_PROFILE_ID_KEY = "PROFILE_ID";
     public static final String EXTRA_IN_OFFICE_STATE_KEY = "IN_OFFICE_STATE";
+    public static final String EXTRA_RETURN_IN_OFFICE = "RETURN_IN_OFFICE_STATE";
 
     private SharedPreferences sharedPreferences;
 
@@ -103,8 +108,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra(EXTRA_PROFILE_ID_KEY, currentProfileId);
         intent.putExtra(EXTRA_IN_OFFICE_STATE_KEY, getInOfficeStatus(currentProfileId));
 
-        startActivity(intent);
+        mGetStatus.launch(intent);
     }
+
+    ActivityResultLauncher<Intent> mGetStatus = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    int resultCode = result.getResultCode();
+                    if (resultCode == RESULT_OK) {
+
+                    } else if (resultCode == RESULT_CANCELED){
+
+                    } else {
+
+                    }
+                }
+            }
+    );
+
 
     private void showProfile(int profileImageId, String firstName, String lastName, String machineId, String idNumber, String positionDescription) {
         // update profile image

@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class ShowProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "ACTIVITY_6_DETAILS";
+    private static final String TAG = "ACTIVITY_7_DETAILS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,13 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
     public void onClick(View view) {
         int eventSourceId = view.getId();
         Log.d(TAG, String.format("Clicked on: %s", eventSourceId));
-        if ((eventSourceId == R.id.button_details_ok) || (eventSourceId == R.id.button_details_cancel))
+
+        if (eventSourceId == R.id.button_details_ok) {
             finish();
+
+        } else if (eventSourceId == R.id.button_details_cancel) {
+            finish();
+        }
         else
             Log.d(TAG, String.format("Unknown click event source: %s", eventSourceId));
     }
