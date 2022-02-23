@@ -20,7 +20,7 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
-    private static final String TAG = "ACTIVITY_7";
+    private static final String TAG = "ACTIVITY_8";
 
     public static final String EXTRA_SHOW_MESSAGE_KEY = "SHOW_MESSAGE";
     public static final String EXTRA_PROFILE_ID_KEY = "PROFILE_ID";
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_activity_6), MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_activity_8), MODE_PRIVATE);
 
         Button button = findViewById(R.id.button_next);
         button.setOnClickListener(this);

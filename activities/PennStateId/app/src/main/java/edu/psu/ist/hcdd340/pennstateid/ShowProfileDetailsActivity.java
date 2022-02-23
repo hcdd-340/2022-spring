@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class ShowProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "ACTIVITY_7_DETAILS";
+    private static final String TAG = "ACTIVITY_8_DETAILS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
 
         CheckBox checkBox = findViewById(R.id.details_in_office_checkbox);
         checkBox.setChecked(inOffice);
+        Log.d(TAG, "On Create");
     }
 
     @Override
@@ -52,5 +53,35 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
         }
         else
             Log.d(TAG, String.format("Unknown click event source: %s", eventSourceId));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "On Start");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "On Resume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "On Pause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "On Stop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "On Destroy");
     }
 }

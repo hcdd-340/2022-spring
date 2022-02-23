@@ -6,7 +6,8 @@
     <string name="next_button_label">Next</string>
     <string name="details_button_label">Details</string>
     <string name="switch_in_office_label">Currently In Office</string>
-    <string name="shared_pref_activity_6">SHARED_PREF_ACTIVITY_6</string>
+    <string name="label_location_details">Office Location</string>
+    <string name="shared_pref_activity_8">SHARED_PREF_ACTIVITY_8</string>
 
     <!-- President Profile information -->
     <string name="president_last_name">Bendapudi</string>

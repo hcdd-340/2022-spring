@@ -58,4 +58,15 @@
         app:layout_constraintStart_toStartOf="@+id/details_profile_name"
         app:layout_constraintTop_toBottomOf="@+id/details_profile_name" />
 
+    <EditText
+        android:id="@+id/editTextOfficeLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/label_location_details"
+        android:inputType="text"
+        android:text="@string/label_location_details"
+        app:layout_constraintStart_toStartOf="@+id/details_in_office_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/details_in_office_checkbox" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
