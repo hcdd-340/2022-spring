@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class ShowProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "ACTIVITY_8_DETAILS";
+    private static final String TAG = "ACTIVITY_9_DETAILS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,9 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
 
         CheckBox checkBox = findViewById(R.id.details_in_office_checkbox);
         checkBox.setChecked(inOffice);
+
+        findViewById(R.id.button_details_decrease).setOnClickListener(this);
+        findViewById(R.id.button_details_increase).setOnClickListener(this);
         Log.d(TAG, "On Create");
     }
 
@@ -51,8 +54,29 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
             setResult(RESULT_CANCELED);
             finish();
         }
-        else
+        else if (eventSourceId == R.id.button_details_increase) {
+            increaseCount();
+        } else if (eventSourceId == R.id.button_details_decrease) {
+            decreaseCount();
+        } else
             Log.d(TAG, String.format("Unknown click event source: %s", eventSourceId));
+    }
+
+    private int getCurrentCount() {
+        TextView textView = findViewById(R.id.textViewCount);
+        return Integer.parseInt(textView.getText().toString());
+    }
+
+    private void increaseCount() {
+        int nextCount = getCurrentCount() + 1;
+        TextView textView = findViewById(R.id.textViewCount);
+        textView.setText(String.format("%s", nextCount));
+    }
+
+    private void decreaseCount() {
+        int nextCount = getCurrentCount() - 1;
+        TextView textView = findViewById(R.id.textViewCount);
+        textView.setText(String.format("%s", nextCount));
     }
 
     @Override
@@ -83,5 +107,11 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "On Destroy");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.d(TAG, "On Save Instance");
     }
 }

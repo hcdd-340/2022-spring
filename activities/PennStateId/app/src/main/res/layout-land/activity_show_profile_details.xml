@@ -10,33 +10,12 @@
         android:id="@+id/button_details_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="@android:string/ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_details_cancel"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <Button
-        android:id="@+id/button_details_increase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_increase"
-        app:layout_constraintEnd_toStartOf="@+id/button_details_decrease"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCount" />
-
-    <Button
-        android:id="@+id/button_details_decrease"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/label_decrease"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_details_increase"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCount" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_details_cancel"
@@ -60,13 +39,13 @@
         android:id="@+id/details_profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="@string/details_profile_name_placeholder"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/details_in_office_checkbox"
+        app:layout_constraintBottom_toTopOf="@+id/button_details_ok"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <CheckBox
@@ -75,7 +54,6 @@
         android:layout_height="wrap_content"
         android:text="@string/switch_in_office_label"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/details_profile_name"
         app:layout_constraintTop_toBottomOf="@+id/details_profile_name" />
 
@@ -84,14 +62,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_zero"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintEnd_toEndOf="@+id/details_profile_name"
         app:layout_constraintStart_toStartOf="@+id/details_profile_name"
         app:layout_constraintTop_toBottomOf="@+id/details_in_office_checkbox" />
 
+    <Button
+        android:id="@+id/button_details_increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_increase"
+        app:layout_constraintEnd_toStartOf="@+id/button_details_decrease"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCount" />
+
+    <Button
+        android:id="@+id/button_details_decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/label_decrease"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_details_increase"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCount" />
+
     <View
-        android:id="@+id/divider3"
-        android:layout_width="409dp"
+        android:id="@+id/divider"
+        android:layout_width="729dp"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,10 +98,10 @@
         app:layout_constraintTop_toBottomOf="@+id/details_in_office_checkbox" />
 
     <View
-        android:id="@+id/divider4"
-        android:layout_width="409dp"
+        android:id="@+id/divider2"
+        android:layout_width="729dp"
         android:layout_height="1dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="40dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
