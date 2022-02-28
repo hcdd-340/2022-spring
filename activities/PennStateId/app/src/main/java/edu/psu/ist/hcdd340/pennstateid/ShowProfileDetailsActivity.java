@@ -41,7 +41,6 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
     @Override
     public void onClick(View view) {
         int eventSourceId = view.getId();
-        Log.d(TAG, String.format("Clicked on: %s", eventSourceId));
 
         if (eventSourceId == R.id.button_details_ok) {
             CheckBox checkBox = findViewById(R.id.details_in_office_checkbox);
@@ -67,16 +66,19 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
         return Integer.parseInt(textView.getText().toString());
     }
 
+    private void setCurrentCount(int count) {
+        TextView textView = findViewById(R.id.textViewCount);
+        textView.setText(String.format("%s", count));
+    }
+
     private void increaseCount() {
         int nextCount = getCurrentCount() + 1;
-        TextView textView = findViewById(R.id.textViewCount);
-        textView.setText(String.format("%s", nextCount));
+        setCurrentCount(nextCount);
     }
 
     private void decreaseCount() {
         int nextCount = getCurrentCount() - 1;
-        TextView textView = findViewById(R.id.textViewCount);
-        textView.setText(String.format("%s", nextCount));
+        setCurrentCount(nextCount);
     }
 
     @Override
