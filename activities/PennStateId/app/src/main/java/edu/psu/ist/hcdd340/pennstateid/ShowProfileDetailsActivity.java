@@ -14,6 +14,7 @@ import org.w3c.dom.Text;
 public class ShowProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "ACTIVITY_9_DETAILS";
+    private static final String CURRENT_COUNT_KEY = "CURRENT_COUNT_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,12 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
 
         findViewById(R.id.button_details_decrease).setOnClickListener(this);
         findViewById(R.id.button_details_increase).setOnClickListener(this);
+
+        if (savedInstanceState != null) {
+            int currentCount = savedInstanceState.getInt(CURRENT_COUNT_KEY);
+            setCurrentCount(currentCount);
+        }
+
         Log.d(TAG, "On Create");
     }
 
@@ -114,6 +121,9 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putInt(CURRENT_COUNT_KEY, getCurrentCount());
+
         Log.d(TAG, "On Save Instance");
     }
 }
