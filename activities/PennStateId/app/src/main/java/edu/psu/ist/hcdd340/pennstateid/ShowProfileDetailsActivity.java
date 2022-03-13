@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class ShowProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "ACTIVITY_8_DETAILS";
+    private static final String TAG = "ACTIVITY_10_DETAILS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,5 +83,12 @@ public class ShowProfileDetailsActivity extends AppCompatActivity implements Vie
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "On Destroy");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        Log.d(TAG, "On Save Instance");
     }
 }
