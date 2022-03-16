@@ -7,7 +7,7 @@
     <string name="details_button_label">Details</string>
     <string name="switch_in_office_label">Currently In Office</string>
     <string name="label_location_details">Office Location</string>
-    <string name="shared_pref">SHARED_PREF_ACTIVITY_10</string>
+    <string name="shared_pref">SHARED_PREF_ACTIVITY_11</string>
 
     <!-- President Profile information -->
     <string name="president_last_name">Bendapudi</string>
@@ -25,4 +25,18 @@
 
     <string name="details_profile_name_placeholder">Placeholder Profile ID</string>
 
+    <string name="mission_penn_state"><b><big>Mission and Values</big></b>
+\n
+\n
+The Pennsylvania State University is a multi-campus, land-grant, public research university that educates students from around the world and supports individuals and communities through integrated programs of teaching, research, and service.
+\n
+\n
+Our instructional mission includes <a href="https://admissions.psu.edu/">undergraduate</a>, <a href="https://gradschool.psu.edu/prospective-students/">graduate</a>, professional, continuing, and <a href="https://extension.psu.edu/">extension</a> education offered through both resident instruction and distance learning. Our educational programs are enriched by the talent, knowledge, diversity, creativity, and teaching and research acumen of our faculty, students, and staff.
+\n
+\n
+Our discovery-oriented, collaborative, and interdisciplinary research and scholarship promote human and economic development, global understanding, and advancement in professional practice through the expansion of knowledge and its applications in the natural and applied sciences, social and behavioral sciences, engineering, technology, arts and humanities, and myriad professions.
+\n
+\n
+As Pennsylvania\'s land-grant university, we provide unparalleled access to education and public service to support the citizens of the Commonwealth and beyond. We engage in collaborative activities with private sector, educational, and governmental partners worldwide to generate, integrate, apply, and disseminate knowledge that is valuable to society.
+    </string>
 </resources>

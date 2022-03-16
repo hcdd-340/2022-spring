@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResult;
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switchInOffice.setOnCheckedChangeListener(this);
 
         showInOfficeStatus(getCurrentProfileId());
+
+        ImageView logo = findViewById(R.id.psu_logo);
+        logo.setOnClickListener(this);
     }
 
     @Override
@@ -57,10 +61,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             handleNextButtonClick();
         } else if (eventSourceId == R.id.button_details) {
             handleDetailsButtonClick();
-        } else {
+        } else if (eventSourceId == R.id.psu_logo) {
+            handleLogoClick();
+        }
+        else {
             Log.d(TAG, String.format("Unknown click event source: %s", eventSourceId));
         }
 
+    }
+
+    private void handleLogoClick() {
+        // we can use startActivity as we are not expecting any result callback
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
     /**
