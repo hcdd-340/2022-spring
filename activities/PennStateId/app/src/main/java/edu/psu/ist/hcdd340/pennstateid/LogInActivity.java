@@ -33,6 +33,9 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         EditText editText = findViewById(R.id.editTextUserName);
         String userName = editText.getText().toString();
 
-        Log.d(TAG, "User name: \"" + userName + "\" and Password: ");
+        editText = findViewById(R.id.editTextPassword);
+        String password = editText.getText().toString();
+
+        Log.d(TAG, "User name: \"" + userName + "\" and Password: \"" + password + "\"");
     }
 }
