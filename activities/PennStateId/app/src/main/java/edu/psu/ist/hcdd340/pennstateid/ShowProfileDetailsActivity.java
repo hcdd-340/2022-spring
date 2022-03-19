@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class ShowProfileDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "ACTIVITY_10_DETAILS";
+    private static final String TAG = "ACTIVITY_DETAILS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ImageView logo = findViewById(R.id.psu_logo);
         logo.setOnClickListener(this);
+
+        TextView id = findViewById(R.id.id_label);
+        id.setOnClickListener(this);
     }
 
     @Override
@@ -63,11 +66,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             handleDetailsButtonClick();
         } else if (eventSourceId == R.id.psu_logo) {
             handleLogoClick();
+        } else if(eventSourceId == R.id.id_label) {
+            handleIDLabelClick();
         }
         else {
             Log.d(TAG, String.format("Unknown click event source: %s", eventSourceId));
         }
 
+    }
+
+    private void handleIDLabelClick() {
+        // we can use startActivity as we are not expecting any result callback
+        Intent intent = new Intent(this, LogInActivity.class);
+        startActivity(intent);
     }
 
     private void handleLogoClick() {

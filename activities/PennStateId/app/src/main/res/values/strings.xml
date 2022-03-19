@@ -7,7 +7,7 @@
     <string name="details_button_label">Details</string>
     <string name="switch_in_office_label">Currently In Office</string>
     <string name="label_location_details">Office Location</string>
-    <string name="shared_pref">SHARED_PREF_ACTIVITY_11</string>
+    <string name="shared_pref">SHARED_PREF_ACTIVITY_12</string>
 
     <!-- President Profile information -->
     <string name="president_last_name">Bendapudi</string>
@@ -24,6 +24,35 @@
     <string name="ist_dean_position_description">FACULTY/DEAN</string>
 
     <string name="details_profile_name_placeholder">Placeholder Profile ID</string>
+
+    <string name="user_name">User Name:</string>
+    <string name="user_name_hint">abc123@psu.edu</string>
+    <string name="password">Password:</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_label">Log In</string>
+    <string name="register_button_label">Register</string>
+
+    <string name="select_college">Select College</string>
+    <string-array name="penn_state_colleges">
+        <item>College of Agricultural Sciences</item>
+        <item>College of Arts and Architecture</item>
+        <item>Smeal College of Business</item>
+        <item>Donald P. Bellisario College of Communications</item>
+        <item>College of Earth and Mineral Sciences</item>
+        <item>College of Education</item>
+        <item>College of Engineering</item>
+        <item>College of Health and Human Development</item>
+        <item>College of Information Sciences and Technology</item>
+        <item>Dickinson Law</item>
+        <item>Penn State Law</item>
+        <item>College of the Liberal Arts</item>
+        <item>College of Medicine</item>
+        <item>Ross and Carol Nese College of Nursing</item>
+        <item>Eberly College of Science</item>
+        <item>Schreyer Honors College</item>
+        <item>Graduate School</item>
+        <item>Pennsylvania College of Technology</item>
+    </string-array>
 
     <string name="mission_penn_state"><b><big>Mission and Values</big></b>
 \n
