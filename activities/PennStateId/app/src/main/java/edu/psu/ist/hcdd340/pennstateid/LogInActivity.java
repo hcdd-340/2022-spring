@@ -18,6 +18,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_log_in);
 
         findViewById(R.id.button_login).setOnClickListener(this);
+        findViewById(R.id.button_register).setOnClickListener(this);
     }
 
     @Override
@@ -25,6 +26,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         int eventSourceId = view.getId();
         if (eventSourceId == R.id.button_login) {
             handleLogIn();
+        } else if (eventSourceId == R.id.button_register) {
+            handleRegister();
         }
     }
 
@@ -37,5 +40,10 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         String password = editText.getText().toString();
 
         Log.d(TAG, "User name: \"" + userName + "\" and Password: \"" + password + "\"");
+    }
+
+    private void handleRegister() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }
