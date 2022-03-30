@@ -68,6 +68,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     if (resultCode == RESULT_OK) {
                         assert result.getData() != null;
                         Bitmap imageBitmap = (Bitmap) result.getData().getExtras().get("data");
+                        ImageView imageFromCamera = findViewById(R.id.imageFromCamera);
+                        imageFromCamera.setImageBitmap(imageBitmap);
+
                     } else if (resultCode == RESULT_CANCELED) {
                         Log.d(TAG, "Canceled without taking an image");
                     } else {
@@ -79,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private void handleAddImage() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        mCaptureImage.launch(takePictureIntent);
     }
 
 
