@@ -1,13 +1,28 @@
 package edu.psu.ist.hcdd340.pennstateid;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.content.FileProvider;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+
+import java.io.File;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -29,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         findViewById(R.id.button_register).setOnClickListener(this);
         findViewById(R.id.button_cancel).setOnClickListener(this);
+        findViewById(R.id.button_add_image).setOnClickListener(this);
     }
 
     @Override
@@ -39,8 +55,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         } else if (eventSourceId == R.id.button_register) {
             String selectedItem = (String) spinner.getSelectedItem();
             Log.d(TAG, "Register button clicked with: " + selectedItem);
+        } else if (eventSourceId == R.id.button_add_image) {
+            handleAddImage();
         }
     }
+
+    ActivityResultLauncher<Intent> mCaptureImage = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    int resultCode = result.getResultCode();
+                    if (resultCode == RESULT_OK) {
+                        assert result.getData() != null;
+                        Bitmap imageBitmap = (Bitmap) result.getData().getExtras().get("data");
+                    } else if (resultCode == RESULT_CANCELED) {
+                        Log.d(TAG, "Canceled without taking an image");
+                    } else {
+                        Log.d(TAG, String.format("Unknown return code from the Camera App: %s", resultCode));
+                    }
+                }
+            }
+    );
+
+    private void handleAddImage() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
