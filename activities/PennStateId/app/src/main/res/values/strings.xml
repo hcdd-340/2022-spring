@@ -7,7 +7,7 @@
     <string name="details_button_label">Details</string>
     <string name="switch_in_office_label">Currently In Office</string>
     <string name="label_location_details">Office Location</string>
-    <string name="shared_pref">SHARED_PREF_ACTIVITY_12</string>
+    <string name="shared_pref">SHARED_PREF_ACTIVITY_15</string>
 
     <!-- President Profile information -->
     <string name="president_last_name">Bendapudi</string>
@@ -69,4 +69,7 @@ Our discovery-oriented, collaborative, and interdisciplinary research and schola
 \n
 As Pennsylvania\'s land-grant university, we provide unparalleled access to education and public service to support the citizens of the Commonwealth and beyond. We engage in collaborative activities with private sector, educational, and governmental partners worldwide to generate, integrate, apply, and disseminate knowledge that is valuable to society.
     </string>
+    <string name="menu_info">Info</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_register">Register</string>
 </resources>
