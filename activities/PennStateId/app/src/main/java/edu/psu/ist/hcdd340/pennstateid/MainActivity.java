@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.menu_info:
                 showInfo();
                 return true;
+            case R.id.menu_register:
+                showRegisterActivity();
+                return true;
             default:
                 // Do nothing
         }
