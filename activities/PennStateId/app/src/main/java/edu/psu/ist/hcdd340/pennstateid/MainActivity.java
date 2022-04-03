@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String EXTRA_PROFILE_ID_KEY = "PROFILE_ID";
     public static final String EXTRA_IN_OFFICE_STATE_KEY = "IN_OFFICE_STATE";
     public static final String EXTRA_RETURN_IN_OFFICE = "RETURN_IN_OFFICE_STATE";
+    public static final String APP_INFO = "Created for the course HCDD 340.";
 
     private SharedPreferences sharedPreferences;
 
@@ -62,6 +63,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_info:
+                showInfo();
+                return true;
+            default:
+                // Do nothing
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showRegisterActivity() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    private void showInfo() {
+        Log.d(TAG, APP_INFO);
+    }
+
 
     @Override
     public void onClick(View view) {
