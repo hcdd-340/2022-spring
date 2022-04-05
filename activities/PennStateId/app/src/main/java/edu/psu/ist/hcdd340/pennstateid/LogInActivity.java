@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "ACTIVITY_LOGIN";
@@ -38,6 +40,11 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
         editText = findViewById(R.id.editTextPassword);
         String password = editText.getText().toString();
+
+        View view = findViewById(R.id.button_login);
+        Snackbar.make(view, "Wrong password", Snackbar.LENGTH_LONG)
+                .setTextColor(getColor(R.color.design_default_color_error))
+                .show();
 
         Log.d(TAG, "User name: \"" + userName + "\" and Password: \"" + password + "\"");
     }
