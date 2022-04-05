@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
@@ -74,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 showRegisterActivity();
                 return true;
             default:
+                Button button = findViewById(R.id.button_details);
+                Snackbar.make(button, "Not implemented yet!", Snackbar.LENGTH_LONG).show();
                 // Do nothing
         }
         return super.onOptionsItemSelected(item);
