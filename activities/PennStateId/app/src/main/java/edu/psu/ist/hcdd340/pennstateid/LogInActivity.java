@@ -42,7 +42,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         String password = editText.getText().toString();
 
         View view = findViewById(R.id.button_login);
-        Snackbar.make(view, "Wrong password", Snackbar.LENGTH_INDEFINITE)
+        Snackbar.make(view, "Wrong password", Snackbar.LENGTH_LONG)
                 .setBackgroundTint(getColor(R.color.design_default_color_error))
                 .show();
 
