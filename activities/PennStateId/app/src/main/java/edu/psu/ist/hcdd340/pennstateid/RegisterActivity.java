@@ -4,11 +4,13 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.content.FileProvider;
 
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -51,13 +53,22 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         int eventSourceId = view.getId();
         if (eventSourceId == R.id.button_cancel) {
-            finish();
+            confirmRegisterCancel();
         } else if (eventSourceId == R.id.button_register) {
             String selectedItem = (String) spinner.getSelectedItem();
             Log.d(TAG, "Register button clicked with: " + selectedItem);
         } else if (eventSourceId == R.id.button_add_image) {
             handleAddImage();
         }
+    }
+
+    private void confirmRegisterCancel() {
+        AlertDialog.Builder confirmCancelDialog = new AlertDialog.Builder(this);
+        confirmCancelDialog.setTitle("Discard Information?");
+        confirmCancelDialog.setMessage(R.string.register_cancel_confirm);
+
+
+        confirmCancelDialog.show();
     }
 
     ActivityResultLauncher<Intent> mCaptureImage = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
