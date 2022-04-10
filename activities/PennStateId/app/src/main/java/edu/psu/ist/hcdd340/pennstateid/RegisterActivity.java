@@ -66,7 +66,23 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         AlertDialog.Builder confirmCancelDialog = new AlertDialog.Builder(this);
         confirmCancelDialog.setTitle("Discard Information?");
         confirmCancelDialog.setMessage(R.string.register_cancel_confirm);
+        confirmCancelDialog.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // user clicked on discard button
+                Log.d(RegisterActivity.TAG, "User clicked on discard button");
+                finish(); // going back to previous screen
+            }
+        });
 
+        confirmCancelDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // user clicked on discard button
+                Log.d(RegisterActivity.TAG, "User clicked on cancel button");
+                // user has canceled the discard option. We should stay in the current screen
+            }
+        });
 
         confirmCancelDialog.show();
     }
