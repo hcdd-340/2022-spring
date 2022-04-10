@@ -1,5 +1,6 @@
 package edu.psu.ist.hcdd340.pennstateid;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String EXTRA_PROFILE_ID_KEY = "PROFILE_ID";
     public static final String EXTRA_IN_OFFICE_STATE_KEY = "IN_OFFICE_STATE";
     public static final String EXTRA_RETURN_IN_OFFICE = "RETURN_IN_OFFICE_STATE";
-    public static final String APP_INFO = "Created for the course HCDD 340.";
+    public static final String APP_INFO = "App for HCDD 340";
 
     private SharedPreferences sharedPreferences;
 
@@ -88,7 +90,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showInfo() {
-        Log.d(TAG, APP_INFO);
+        AlertDialog.Builder infoDialog = new AlertDialog.Builder(this);
+        infoDialog.setTitle(APP_INFO);
+        infoDialog.setMessage(R.string.info_dialogue);
+
+        infoDialog.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // nothing to do here.
+            }
+        });
+
+        infoDialog.show();
     }
 
 
