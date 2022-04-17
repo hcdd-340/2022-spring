@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/psu_logo"
+        android:contentDescription="@string/describe_penn_state_logo"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="16dp"
@@ -138,7 +139,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/labeCollege"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/labeCollege"
-        app:layout_constraintTop_toTopOf="@+id/labeCollege" />
+        app:layout_constraintTop_toTopOf="@+id/labeCollege"
+        android:contentDescription="@string/describe_college_spinner"/>
 
     <Button
         android:id="@+id/button_add_image"
@@ -152,6 +154,7 @@
 
     <ImageView
         android:id="@+id/imageFromCamera"
+        android:contentDescription="@string/describe_profile_image"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginBottom="8dp"
