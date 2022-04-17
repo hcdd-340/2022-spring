@@ -1,4 +1,5 @@
 <resources>
+    <string name="describe_penn_state_logo">Penn State mission and values</string>
     <string name="app_name">Penn State ID</string>
     <string name="pennstate_label">PennState</string>
     <string name="id_label">id+</string>
@@ -32,6 +33,7 @@
     <string name="login_button_label">Log In</string>
     <string name="register_button_label">Register</string>
     <string name="add_image_button_label">Add Image</string>
+    <string name="describe_profile_image">Your profile image</string>
 
     <string name="select_college">Select College</string>
     <string-array name="penn_state_colleges">
@@ -54,6 +56,8 @@
         <item>Graduate School</item>
         <item>Pennsylvania College of Technology</item>
     </string-array>
+    <string name="describe_college_spinner">Select your college</string>
+
 
     <string name="mission_penn_state"><b><big>Mission and Values</big></b>
 \n
