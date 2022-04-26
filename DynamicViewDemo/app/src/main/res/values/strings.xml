@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DynamicView</string>
+
+    <string-array name="digits">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="letters">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
+
+    <string name="label_digit">Digits</string>
+    <string name="label_letters">Letters</string>
+</resources>
